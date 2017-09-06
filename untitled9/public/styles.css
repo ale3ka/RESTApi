@@ -1,0 +1,32 @@
+﻿          html { height: 100% }
+       body { height: 100%; margin: 0; padding: 0 }
+
+       #map-canvas { height: 100% }
+
+       #getDataBtn {
+         z-index:10000;   /*μεγάλη τιμή για να μην σκεπαστεί από το χάρτη*/
+         position: fixed;
+         top:160px;
+         left:8px;
+         width:98px;
+         height:30px;
+       }
+
+       #cleanMarkersBtn {
+         z-index:10000;   /*μεγάλη τιμή για να μην σκεπαστεί από το χάρτη*/
+         position: fixed;
+         top:215px;
+         left:8px;
+         width:98px;
+         height:30px;
+       }
+
+		.labels {
+		  width: 38px;
+		  height: 23px;
+		  padding: 3px 0 0 0;
+		  color: #000;
+		  text-align: center;
+		  font-weight: 700;
+		  background-image: url(images/marker-label-background.png);
+		}

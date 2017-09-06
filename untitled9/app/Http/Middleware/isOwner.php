@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: alexia
+ * Date: 30/1/2017
+ * Time: 10:45 πμ
+ */
+
+namespace App\Http\Middleware;
+
+
+class isOwner
+{
+
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string|null  $guard
+     * @return mixed
+     */
+    public function handle($request, Closure $next, $guard = null)
+    {
+        if (Auth::guard($guard)->check() && Auth::user()->owner == 1) {
+            return $next($request);
+        }
+        else {
+            return redirect('/')->withInput()->with('errmessage', 'Please Login to access restricted area.');
+        }
+    }
+
+}
